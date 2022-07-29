@@ -4,10 +4,20 @@
  */
 package controller;
 
+import model.Termohigrometro;
+
 /**
  *
  * @author Wnieto
  */
 public class termohigrometroController {
-    
+    public boolean insertTermohigrometro(String fecha, float temperaturaam, float temperaturapm,float humedadaam,float humedadpm){
+        Termohigrometro termohigrometro = new Termohigrometro();
+        termohigrometro.fecha = fecha;
+        termohigrometro.temperaturaam = temperaturaam;
+        termohigrometro.temperaturaam = temperaturaam;
+        termohigrometro.humedadam = temperaturaam;
+        termohigrometro.humedadpm = temperaturaam;
+        return termohigrometro.insert();
+    }    
 }
