@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.TermohigrometroController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Wnieto
@@ -15,8 +18,13 @@ public class frmTermohigrometro extends javax.swing.JFrame {
      */
     public frmTermohigrometro() {
         initComponents();
-        setLocationRelativeTo(null);    }
+        setLocationRelativeTo(null);    
+    }
 
+
+    TermohigrometroController termohigrometroController = new TermohigrometroController();
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,10 +51,10 @@ public class frmTermohigrometro extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnCrearTemperatura = new javax.swing.JButton();
+        btnBuscarTemperatura = new javax.swing.JButton();
+        btnBorrarTemperatura = new javax.swing.JButton();
+        btnActualizarTemperatura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +71,16 @@ public class frmTermohigrometro extends javax.swing.JFrame {
 
         lbHumedadPM.setText("Humedad PM");
 
+        txtFecha.setNextFocusableComponent(txtTemperaturaAM);
+
+        txtTemperaturaAM.setNextFocusableComponent(txtHumedadAM);
+
+        txtTemperaturaPM.setNextFocusableComponent(txtHumedadPM);
+
+        txtHumedadAM.setNextFocusableComponent(txtTemperaturaPM);
+
+        txtHumedadPM.setNextFocusableComponent(btnCrearTemperatura);
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -78,39 +96,51 @@ public class frmTermohigrometro extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton1.setText("Crear");
+        btnCrearTemperatura.setText("Crear");
+        btnCrearTemperatura.setMaximumSize(new java.awt.Dimension(79, 23));
+        btnCrearTemperatura.setMinimumSize(new java.awt.Dimension(79, 23));
+        btnCrearTemperatura.setNextFocusableComponent(btnCrearTemperatura);
+        btnCrearTemperatura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearTemperaturaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Buscar");
+        btnBuscarTemperatura.setText("Buscar");
+        btnBuscarTemperatura.setMaximumSize(new java.awt.Dimension(79, 23));
+        btnBuscarTemperatura.setMinimumSize(new java.awt.Dimension(79, 23));
 
-        jButton3.setText("Actualizar");
+        btnBorrarTemperatura.setText("Borrar");
+        btnBorrarTemperatura.setMaximumSize(new java.awt.Dimension(79, 23));
+        btnBorrarTemperatura.setMinimumSize(new java.awt.Dimension(79, 23));
 
-        jButton4.setText("Borrar");
+        btnActualizarTemperatura.setText("Actualizar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnCrearTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnActualizarTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(44, 44, 44)
-                .addComponent(jButton2)
-                .addGap(59, 59, 59)
-                .addComponent(jButton4)
-                .addGap(67, 67, 67))
+                .addComponent(btnBuscarTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(btnBorrarTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCrearTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrarTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActualizarTemperatura))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,7 +156,7 @@ public class frmTermohigrometro extends javax.swing.JFrame {
                         .addGap(396, 396, 396))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +177,7 @@ public class frmTermohigrometro extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtHumedadAM)
                                     .addComponent(txtHumedadPM, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(26, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -182,7 +212,7 @@ public class frmTermohigrometro extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(lbHumedadPM))
                         .addComponent(txtHumedadPM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,6 +241,26 @@ public class frmTermohigrometro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCrearTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearTemperaturaActionPerformed
+        // TODO add your handling code here:
+        String fecha = txtFecha.getText();
+        float temperaturaAm = Float.parseFloat(txtTemperaturaAM.getText());
+        float temperaturaPm = Float.parseFloat(txtTemperaturaPM.getText());
+        float humedadAm = Float.parseFloat(txtHumedadAM.getText());
+        float humedadPm = Float.parseFloat(txtHumedadPM.getText());
+        
+        boolean seInserto = termohigrometroController.insertTermohigrometro(fecha, temperaturaAm, temperaturaPm, humedadAm, humedadPm);
+        if (seInserto){
+            JOptionPane.showMessageDialog(this,"el registro se inserto correctamente");
+        }else{
+            JOptionPane.showMessageDialog(this,"Hubo un error al registro el municipio");
+        }
+        //llenarTablaMunicipios(); 
+        //llenarComboMunicipios();        
+    }//GEN-LAST:event_btnCrearTemperaturaActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -247,10 +297,10 @@ public class frmTermohigrometro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnActualizarTemperatura;
+    private javax.swing.JButton btnBorrarTemperatura;
+    private javax.swing.JButton btnBuscarTemperatura;
+    private javax.swing.JButton btnCrearTemperatura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -33,7 +33,7 @@ public class Termohigrometro extends DbData{
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(url, user, password);
-            String query = "INSERT INTO termohigrometro VALUES (null,?,?,?,?,?)";
+            String query = "INSERT INTO temperaturahumedad VALUES (null,?,?,?,?,?)";
             PreparedStatement sentencia = connection.prepareStatement(query);
             sentencia.setString(1,fecha);
             sentencia.setFloat(2,temperaturaam);
