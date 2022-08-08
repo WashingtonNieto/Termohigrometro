@@ -4,6 +4,7 @@
  */
 package controller;
 
+import java.util.ArrayList;
 import model.Termohigrometro;
 
 /**
@@ -19,5 +20,27 @@ public class TermohigrometroController {
         termohigrometro.humedadam = humedadam;
         termohigrometro.humedadpm = humedadpm;
         return termohigrometro.insert();
+    }  
+    public boolean updateTermohigrometro(int id, String fecha, float temperaturaam, float temperaturapm, float humedadam, float humedadpm){
+        Termohigrometro termohigrometro = new Termohigrometro();
+        termohigrometro.id = id;
+        termohigrometro.fecha = fecha;
+        termohigrometro.temperaturaam = temperaturaam;
+        termohigrometro.temperaturapm = temperaturapm;
+        termohigrometro.humedadam = humedadam;
+        termohigrometro.humedadpm = humedadpm;
+        return termohigrometro.update();
+    }     
+    
+    public ArrayList<Termohigrometro> SelectTermohigrometro(){
+        Termohigrometro termohigrometro = new Termohigrometro();
+        return termohigrometro.select();
     }    
+
+    public Termohigrometro findTermohigrometro(int id){
+        Termohigrometro termohigrometro = new Termohigrometro();
+        return termohigrometro.find(id);
+    }    
+    
+    
 }

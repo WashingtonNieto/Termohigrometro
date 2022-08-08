@@ -12,6 +12,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -73,47 +76,44 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                              <Component id="lbFecha" min="-2" pref="51" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jdcFecha" min="-2" pref="163" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="lbTemperaturaPM" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="txtTemperaturaPM" min="-2" pref="165" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lbHumedadPM" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace min="97" pref="97" max="-2" attributes="0"/>
-                                                      <Component id="txtTemperaturaAM" min="-2" pref="164" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="lbTemperaturaAM" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lbHumedadAM" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtHumedadAM" max="32767" attributes="0"/>
-                                          <Component id="txtHumedadPM" alignment="1" min="-2" pref="166" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lbTemperaturaPM" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbIdTemperatura" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtId" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                                  <Component id="txtTemperaturaPM" min="-2" pref="165" max="-2" attributes="0"/>
+                                                  <Component id="txtTemperaturaAM" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lbFecha" alignment="1" min="-2" pref="67" max="-2" attributes="0"/>
+                                                  <Component id="lbHumedadAM" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbHumedadPM" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="lbTemperaturaAM" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jdcFecha" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                          <Component id="txtHumedadAM" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtHumedadPM" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
@@ -132,7 +132,11 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lbFecha" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="lbIdTemperatura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="jdcFecha" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -142,23 +146,23 @@
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="lbTemperaturaAM" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtTemperaturaAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="lbHumedadAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtHumedadAM" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="txtHumedadAM" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbTemperaturaPM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtTemperaturaPM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbHumedadPM" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtHumedadPM" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lbTemperaturaPM" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTemperaturaPM" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtHumedadPM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lbHumedadPM" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="157" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="187" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -169,28 +173,28 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lbFecha">
               <Properties>
-                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Fecha:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbTemperaturaAM">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Temperatura AM"/>
+                <Property name="text" type="java.lang.String" value="Temperatura AM:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbTemperaturaPM">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Temperatura PM"/>
+                <Property name="text" type="java.lang.String" value="Temperatura PM:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbHumedadAM">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Humedad AM"/>
+                <Property name="text" type="java.lang.String" value="Humedad AM:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lbHumedadPM">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Humedad PM"/>
+                <Property name="text" type="java.lang.String" value="Humedad PM:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTemperaturaAM">
@@ -228,7 +232,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="tblTemperatura">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="0" rowCount="4"/>
@@ -240,6 +244,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblTemperaturaMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -256,29 +263,29 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="btnCrearTemperatura" min="-2" pref="85" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="btnActualizarTemperatura" min="-2" pref="85" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                           <Component id="btnBuscarTemperatura" min="-2" pref="85" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="btnBorrarTemperatura" min="-2" pref="85" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnCrearTemperatura" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBuscarTemperatura" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBorrarTemperatura" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnActualizarTemperatura" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -311,6 +318,9 @@
                       <Dimension value="[79, 23]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarTemperaturaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnBorrarTemperatura">
                   <Properties>
@@ -327,12 +337,28 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Actualizar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarTemperaturaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
             <Component class="com.toedter.calendar.JDateChooser" name="jdcFecha">
               <Properties>
                 <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbIdTemperatura">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="Id :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtId">
+              <Properties>
+                <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="txtHumedadAM"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
